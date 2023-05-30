@@ -1,0 +1,36 @@
+<!-- <div class="col-sm-4" *ngFor="let item of this.teams">
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ item }}
+        </mat-panel-title>
+        <mat-panel-description>
+
+         </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p [routerLink]="['product-details']" *ngFor="let items of this.cardData">{{ items.category === item ? items.title :""}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div> -->
+<div class="panel" *ngFor="let item of this.teams">
+  <details>
+      <summary>
+         <ul>
+             <li class="titleName">{{ item}}</li>
+             <li class="titleValue"></li>
+             <li></li>
+         </ul>
+      </summary>
+      <div class="content">
+        <!-- [routerLink]="['product-details']"  -->
+        <p [routerLink]="['product-details']" (click)="getID($event.target)" *ngFor="let items of this.cardData">{{ items.category === item ? items.title :""}}</p>
+      </div>
+  </details>
+  
+  
+</div>
+

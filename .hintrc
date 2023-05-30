@@ -1,0 +1,15 @@
+{
+    "extends": [
+        "development"
+    ]
+}
+{
+    "connector": {...},
+    "formatters": [...],
+    "parsers": [...],
+    "hints": {
+        "no-inline-styles": "error",
+        ...
+    },
+    ...
+}
